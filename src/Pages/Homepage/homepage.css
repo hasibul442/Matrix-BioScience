@@ -1,0 +1,192 @@
+.matrix-title{
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.about-us-description{
+    /* text-align: justify; */
+}
+.about-us{
+    height: 500px;
+    padding-left: 200px;
+    padding-right: 50px;
+    background-color: #3FD2C7;
+}
+.product-box{
+    height: 500px;
+    padding-right: 200px;
+    padding-left: 50px;
+    background-color: #F0A500;
+}
+.our-story-title{
+    margin-top: 70px;
+    font-family: 'Poppins', serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: right;
+    color: #fff;
+}
+.products-title{
+  margin-top: 70px;
+  font-family: 'Poppins', serif;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: left;
+  color: #fff;
+}
+.out-story-details{
+    font-family: 'Poppins', serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 0.4px;
+}
+.product-card{
+  height: 170px;
+}
+.product-name{
+    font-family: 'Poppins', serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+.button-style-2 {
+    position: relative;
+    display: inline-block;
+    outline: none;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+  }
+  .button-style-2 {
+    width: 10rem;
+    height: auto;
+  }
+  .button-style-2 .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
+    background: #ffffff;
+    border-radius: 1.625rem;
+  }
+  .button-style-2 .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #000000;
+  }
+  .button-style-2 .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.2rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+  }
+  .button-style-2 .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.25rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid rgb(0, 0, 0);
+    border-right: 0.125rem solid rgb(0, 0, 0);
+    transform: rotate(45deg);
+  }
+  .button-style-2 .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.25rem 1rem;
+    margin: 0 0 0 1.85rem;
+    color: #ffffff;
+    font-weight: 700;
+    /* line-height: 1.6; */
+    /* text-align: center; */
+  }
+  .button-style-2:hover .circle {
+    width: 100%;
+  }
+  .button-style-2:hover .circle .icon.arrow {
+    background: rgb(0, 0, 0);
+    transform: translate(1rem, 0);
+  }
+  .button-style-2:hover .button-text {
+    color: rgb(0, 0, 0);
+  }
+  .about-us-box-image{
+    background-image: url('./../../../public/assets/background/ourstory-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: sticky;
+  }
+  .about-us-box-image-2{
+    background-image: url('./../../../public/assets/background/ourstory-2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: sticky;
+  }
+
+  .service-title{
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    color: #000;
+    padding-top: 20px;
+  }
+  .product-title{
+    font-family: 'Poppins', serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    color: #000000;
+}
+
+
+.main-text
+{
+  padding-left: 200px;
+    position: absolute;
+    top: 25%;
+    width: 40%;
+    color: #000000;
+}
+
+.fixed-text-block{
+  /* background: rgba( 255, 255, 255, 0.85 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 0px );
+-webkit-backdrop-filter: blur( 0px );
+border-radius: 10px; */
+}
+.fixed-headline{
+  font-family: 'Poppins', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: capitalize;
+}
+.fixed-headline-subtext{
+  font-family: 'Poppins', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #F2FA5A;
+  text-transform: capitalize;
+}
+.brand-bg-size{
+  padding-left: 200px;
+  padding-right: 200px;
+}
+

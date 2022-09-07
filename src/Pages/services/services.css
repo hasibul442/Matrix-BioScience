@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+.contact-bg{
+    background-image: linear-gradient(to right, #000046c0, #1CB5E0),
+    url("./../../../public/assets/background/aboutus.jpg");
+  width: auto;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* opacity: 0.3; */
+  background-attachment: fixed;
+}
+.contact-title{
+    padding-top: 1rem;
+    text-align: left;
+    font-size: 24px;
+    font-weight: 700;
+    color: transparent;
+    text-transform: capitalize;
+    font-family: 'Roboto', sans-serif;
+    line-height: 29.52px;
+    vertical-align: baseline;
+    color: #fff;
+}
+.api-image{
+    filter: drop-shadow(0px 5px 10px #7FBCD2);
+}
+
+.service-description{
+    /* text-align: justify; */
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Poppins', serif;
+}
+
+.product-image{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    transition: 0.5s;
+}
+/* .product-block>.col-md-4{
+    overflow: hidden;
+} */
+.product-block:hover .product-image{
+    transform: scale(1.1);
+}
+.api-bg-image{
+    background-image: url("./../../../public/assets/product/api.jpg");
+}
+.lab-bg-image{
+    background-image: url("./../../../public/assets/product/lab.jpg");
+}
+
+.marketing-bg-image{
+    background-image: url("./../../../public/assets/product/marketing.jpg");
+}
+
+.exports-bg-image{
+    background-image: url("./../../../public/assets/product/export.jpg");
+}
+.service-product-title{
+    font-family: "Poppins", serif;
+    font-size: 24px;
+    font-weight: 700;
+    /* text-align: center; */
+    color: #000000;
+}
+  
