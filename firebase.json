@@ -1,7 +1,7 @@
 {
   "hosting": {
     "public": "build",
-    "site" : "matrix-bioscience",
+    "site":"matrix-bioscience",
     "ignore": [
       "firebase.json",
       "**/.*",

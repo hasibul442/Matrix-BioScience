@@ -84,7 +84,7 @@ function Contact() {
           <div className="container">
             <div className="card border-0">
               <div className="card-body " style={{ backgroundColor:"#F4FCD9" }}>
-                <div className="block-title mt-5">Write to Us</div>
+                <div className="block-title mt-5" style={{ color:"#000" }}>Write to Us</div>
 
                 <div className="">
                   <div className="row mt-3 mb-5">
