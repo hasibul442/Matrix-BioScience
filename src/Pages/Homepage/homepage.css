@@ -47,9 +47,11 @@
 }
 .product-name{
     font-family: 'Poppins', serif;
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 500;
     letter-spacing: 0.4px;
+    color: #fff;
+    text-decoration: none;
 }
 .button-style-2 {
     position: relative;
@@ -132,7 +134,7 @@
     position: sticky;
   }
   .about-us-box-image-2{
-    background-image: url('./../../../public/assets/background/ourstory-2.jpg');
+    background-image: url('./../../../public/assets/background/about-us-2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     position: sticky;
@@ -157,11 +159,14 @@
 
 .main-text
 {
-  padding-left: 200px;
+    margin-right: 200px;
     position: absolute;
-    top: 25%;
-    width: 40%;
+    top: 9rem;
+    right: 0%;
+    width: 22rem;
+    float: right;
     color: #000000;
+    text-align: right;
 }
 
 .fixed-text-block{
@@ -173,16 +178,17 @@ border-radius: 10px; */
 }
 .fixed-headline{
   font-family: 'Poppins', serif;
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 700;
-  color: #fff;
+  color: #000;
   text-transform: capitalize;
+  line-height: 45px;
 }
 .fixed-headline-subtext{
   font-family: 'Poppins', serif;
   font-size: 16px;
-  font-weight: 400;
-  color: #F2FA5A;
+  font-weight: 500;
+  color: #000;
   text-transform: capitalize;
 }
 .brand-bg-size{
@@ -190,3 +196,6 @@ border-radius: 10px; */
   padding-right: 200px;
 }
 
+.product-link{
+  text-decoration: none;
+}

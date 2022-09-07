@@ -43,9 +43,9 @@
 /* .product-block>.col-md-4{
     overflow: hidden;
 } */
-.product-block:hover .product-image{
+/* .product-block:hover .product-image{
     transform: scale(1.1);
-}
+} */
 .api-bg-image{
     background-image: url("./../../../public/assets/product/api.jpg");
 }

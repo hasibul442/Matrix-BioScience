@@ -85,32 +85,29 @@ function Homepage() {
             />
           </Carousel.Item>
 
-          <Carousel.Item>
+          {/* <Carousel.Item>
             <img
               className="d-block w-100"
               style={{ height: "450px" }}
               src="/assets/banner/Ser-7.jpg"
               alt="Banner_Photo"
             />
-          </Carousel.Item>
+          </Carousel.Item> */}
         </Carousel>
       </section>
 
       <div className="main-text hidden-xs">
         <div className="col-md-12 ">
           <div className="fixed-text-block p-4">
-            <p className="fixed-headline">
-              Serving with
-              Innovation
-            </p>
+            <p className="fixed-headline">Serving with Innovation</p>
             <p className="fixed-headline-subtext">
               Strong linkage with healthcare product manufacturers, technology
               and service providers
             </p>
-            <div className="text-center">
-            <Link to="/aboutus" className="btn btn-outline-primary">
-            Read More
-            </Link>
+            <div className="text-right">
+              <Link to="/aboutus" className="btn btn-primary">
+                Read More
+              </Link>
             </div>
           </div>
         </div>
@@ -148,77 +145,38 @@ function Homepage() {
 
           <div className="col-sm-6 product-box">
             <div className="our-story-block">
-              <p className="products-title mt-5">Products We Offer</p>
-              <div className="row">
-                <div className="col-md-6 pb-3">
-                  <div className="card border-0 product-card">
-                    <div className="card-body">
-                      <div className="text-center pt-2 pb-3">
-                        <i
-                          className="fas fa-capsules fa-3x"
-                          style={{ color: "#F24A72" }}
-                        ></i>
-                      </div>
-                      <div className="text-center">
-                        <p className="product-name">
-                          APIs, Excipients and Packaging Materials
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-md-6 pb-3">
-                  <div className="card border-0 product-card">
-                    <div className="card-body">
-                      <div className="text-center pt-2 pb-3">
-                        <i
-                          className="fad fa-vial fa-3x"
-                          style={{ color: "#8479E1" }}
-                        ></i>
-                      </div>
-                      <div className="text-center">
-                        <p className="product-name">Laboratory Analytics</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-md-6 pb-3">
-                  <div className="card border-0 product-card">
-                    <div className="card-body">
-                      <div className="text-center pt-2 pb-3">
-                        <i
-                          className="fad fa-handshake-alt fa-3x"
-                          style={{ color: "#332FD0" }}
-                        ></i>
-                      </div>
-                      <div className="text-center">
-                        <p className="product-name">
-                          Marketing and Distribution
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-md-6 pb-3">
-                  <div className="card border-0 product-card">
-                    <div className="card-body">
-                      <div className="text-center pt-2 pb-3">
-                        <i
-                          className="fad fa-ship fa-3x"
-                          style={{ color: "#CE49BF" }}
-                        ></i>
-                      </div>
-                      <div className="text-center">
-                        <p className="product-name">
-                          Export and Regulatory Services
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <p className="products-title mt-5 pt-3">Products We Offer</p>
+              <div className="px-3 pt-5">
+                <Link to="/products" className="product-link">
+                  <p className="product-name">
+                    <i
+                      className="fas fa-capsules"
+                      style={{ color: "#000" }}
+                    ></i>{" "}
+                    APIs, Excipients and Packaging Materials
+                  </p>
+                </Link>
+                <Link to="/products" className="product-link">
+                  <p className="product-name">
+                    <i className="fad fa-vial" style={{ color: "#000" }}></i>{" "}
+                    Laboratory Analytics
+                  </p>
+                </Link>
+                <Link to="/products" className="product-link">
+                  <p className="product-name">
+                    <i
+                      className="fad fa-handshake-alt"
+                      style={{ color: "#000" }}
+                    ></i>{" "}
+                    Marketing and Distribution
+                  </p>
+                </Link>
+                <Link to="/products" className="product-link">
+                  <p className="product-name">
+                    <i className="fad fa-ship" style={{ color: "#000" }}></i>{" "}
+                    Export and Regulatory Services
+                  </p>
+                </Link>
               </div>
             </div>
           </div>
