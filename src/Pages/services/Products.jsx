@@ -6,10 +6,10 @@ function Products() {
       <section className="contact-bg">
         <div className="container">
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-6">
               <p className="my-auto contact-title">Products</p>
             </div>
-            <div className="col-md-6">
+            <div className="col-6">
               <p className="my-auto contact-deriction">
                 Home <i className="fas fa-angle-right"></i> Products
               </p>

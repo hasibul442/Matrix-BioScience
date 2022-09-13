@@ -32,3 +32,10 @@
   font-size: 14px;
   font-weight: 400;
 }
+
+@media screen and (max-width: 420px){
+  .about-title{
+    font-size: 22px;
+    font-weight: 700;
+}
+}

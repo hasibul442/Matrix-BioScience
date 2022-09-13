@@ -73,3 +73,13 @@
     font-weight: 400;
     color: #000;
 }
+
+@media screen and (max-width: 420px){
+    .contact-deriction{
+        letter-spacing: 0.5px;
+        word-spacing: 0px;
+        color: #fff;
+    }
+}
+
+    

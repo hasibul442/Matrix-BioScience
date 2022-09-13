@@ -33,8 +33,7 @@ function Homepage() {
         <Carousel>
           <Carousel.Item>
             <img
-              className="d-block w-100"
-              style={{ height: "450px" }}
+              className="d-block w-100 banner-image"
               src="/assets/banner/Ser-1.jpg"
               alt="Banner_Photo"
             />
@@ -42,8 +41,7 @@ function Homepage() {
 
           <Carousel.Item>
             <img
-              className="d-block w-100"
-              style={{ height: "450px" }}
+              className="d-block w-100 banner-image"
               src="/assets/banner/Ser-2.jpg"
               alt="Banner_Photo"
             />
@@ -51,8 +49,7 @@ function Homepage() {
 
           <Carousel.Item>
             <img
-              className="d-block w-100"
-              style={{ height: "450px" }}
+              className="d-block w-100 banner-image"
               src="/assets/banner/Ser-3.jpg"
               alt="Banner_Photo"
             />
@@ -60,8 +57,7 @@ function Homepage() {
 
           <Carousel.Item>
             <img
-              className="d-block w-100"
-              style={{ height: "450px" }}
+              className="d-block w-100 banner-image"
               src="/assets/banner/Ser-4.jpg"
               alt="Banner_Photo"
             />
@@ -69,8 +65,7 @@ function Homepage() {
 
           <Carousel.Item>
             <img
-              className="d-block w-100"
-              style={{ height: "450px" }}
+              className="d-block w-100 banner-image"
               src="/assets/banner/Ser-5.jpg"
               alt="Banner_Photo"
             />
@@ -78,8 +73,7 @@ function Homepage() {
 
           <Carousel.Item>
             <img
-              className="d-block w-100"
-              style={{ height: "450px" }}
+              className="d-block w-100 banner-image"
               src="/assets/banner/Ser-6.jpg"
               alt="Banner_Photo"
             />

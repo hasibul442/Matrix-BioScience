@@ -1,15 +1,39 @@
 import React from "react";
 import "./contact.css";
+import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2';
+
 function Contact() {
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_smtp', 'template_l9z6mnl', e.target, 'UZwNjmpl8Vme4c1Dg')
+      .then((result) => {
+        result = Swal.fire({
+          icon: 'success',
+          title: 'Thank You For Contacting Us',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }, (error) => {
+        error = Swal.fire({
+          icon: 'danger',
+          title: 'Opps. Please Try Again',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      });
+      e.target.reset();
+  }
   return (
     <>
       <section className="contact-bg">
         <div className="container">
           <div className="row">
-            <div className="col-md-6">
-              <p className="my-auto contact-title">Contact Us</p>
+            <div className="col-6">
+              <p className="my-auto contact-title">Contact</p>
             </div>
-            <div className="col-md-6">
+            <div className="col-6">
               <p className="my-auto contact-deriction">
                 Home <i className="fas fa-angle-right"></i> Contact Us
               </p>
@@ -25,28 +49,28 @@ function Contact() {
               <div className="card-body card-size ">
                 <h2 className="get-in-touch">Get In Touch</h2>
                 <div className="row pt-5">
-                  <div className="col-sm-1">
+                  <div className="col-1">
                     <i className="fas fa-phone" style={{ color:" #1CB5E0" }}></i>
                   </div>
-                  <div className="col-sm-11">
+                  <div className="col-11">
                     <p className="icon-text">+8801708527025</p>
                   </div>
-                  <div className="col-sm-1">
+                  <div className="col-1">
                     <i className="fab fa-whatsapp icon-color" style={{ color:" #59cf8f" }}></i>
                   </div>
-                  <div className="col-sm-11">
+                  <div className="col-11">
                     <p className="icon-text">+8801708527025</p>
                   </div>
-                  <div className="col-sm-1">
+                  <div className="col-1">
                     <i className="fas fa-comment-alt-dots icon-color" style={{ color:" #ff4a4a" }}></i>
                   </div>
-                  <div className="col-sm-11">
+                  <div className="col-11">
                     <p className="icon-text">info@matrixbioscience-bd.com</p>
                   </div>
-                  <div className="col-sm-1">
+                  <div className="col-1">
                     <i className="fas fa-location icon-color" style={{ color:" #533483" }}></i>
                   </div>
-                  <div className="col-sm-11">
+                  <div className="col-11">
                     <p className="icon-text">
                       7 Link Road, Molla Mansion 5th Floor,<br/> Bangla Motor,
                       Dhaka-1000, Bangladesh
@@ -90,7 +114,7 @@ function Contact() {
                   <div className="row mt-3 mb-5">
                     <div className="col-sm-2"></div>
                     <div className="col-sm-8 border">
-                      <form className="pt-4 pb-4">
+                      <form className="pt-4 pb-4 contact-form" onSubmit={sendEmail}>
                         <div className="form-group row">
                           <div className="col-sm-6 pb-3">
                             <input
@@ -98,6 +122,7 @@ function Contact() {
                               className="form-control border-0 border-bottom pb-3"
                               id="staticEmail"
                               placeholder="Name *"
+                              name="full_name"
                             />
                           </div>
 
@@ -107,6 +132,7 @@ function Contact() {
                               className="form-control border-0 border-bottom pb-3"
                               id="staticEmail"
                               placeholder="Email *"
+                              name="email"
                             />
                           </div>
 
@@ -116,6 +142,7 @@ function Contact() {
                               className="form-control border-0 border-bottom pb-3"
                               id="staticEmail"
                               placeholder="Company *"
+                              name="company"
                             />
                           </div>
 
@@ -125,6 +152,7 @@ function Contact() {
                               className="form-control border-0 border-bottom pb-3"
                               id="staticEmail"
                               placeholder="Country *"
+                              name="country"
                             />
                           </div>
 
@@ -134,6 +162,7 @@ function Contact() {
                               className="form-control border-0 border-bottom pb-3"
                               id="staticEmail"
                               placeholder="Subject *"
+                              name="subject"
                             />
                           </div>
 
@@ -144,6 +173,7 @@ function Contact() {
                               id="staticEmail"
                               placeholder="Messages *"
                               rows={5}
+                              name="message"
                             ></textarea>
                           </div>
                         </div>

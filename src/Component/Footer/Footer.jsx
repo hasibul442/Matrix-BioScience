@@ -92,8 +92,7 @@ function Footer() {
         <div className="footer2">
           <div className="container">
             <p className="footer-text my-auto pt-4 pb-4">
-              Copyright © {new Date().getFullYear()} Matrix Bio-Science
-              Bangladesh.
+              Copyright © {new Date().getFullYear()} Matrix Bioscience Bd.
               <br />
               <small>
                 Developed by{' '}
