@@ -7,7 +7,7 @@
         <div class="page-title-box">
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="javascript: void(0);">Katalyst</a></li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
                     <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
             </div>
@@ -47,9 +47,9 @@
                                 <i class="fad fa-abacus fa-3x dashboard-card-icon"></i>
                             </div>
                             <div class="col-sm-9">
-                                <h4 class="card-title text-center">Basic Chemicals</h4>
+                                <h4 class="card-title text-center">Products</h4>
                                 <div>
-                                    <p class="text-center dashboard-card-text">{{ App\Models\BasicChemicals::get()->count() }}</p>
+                                    <p class="text-center dashboard-card-text">0</p>
                                 </div>
                             </div>
                         </div>
@@ -67,9 +67,9 @@
                                 <i class="fas fa-dice-d20 fa-3x dashboard-card-icon"></i>
                             </div>
                             <div class="col-sm-9">
-                                <h4 class="card-title text-center">Auxiliary Chemicals</h4>
+                                <h4 class="card-title text-center">Brands</h4>
                                 <div>
-                                    <p class="text-center dashboard-card-text">{{ App\Models\AuxiliaryChemicals::get()->count() }}</p>
+                                    <p class="text-center dashboard-card-text">0</p>
                                 </div>
                             </div>
                         </div>
@@ -87,9 +87,9 @@
                                 <i class="fas fa-dice-d20 fa-3x dashboard-card-icon"></i>
                             </div>
                             <div class="col-sm-9">
-                                <h4 class="card-title text-center">Dyestuffs</h4>
+                                <h4 class="card-title text-center">Banners</h4>
                                 <div>
-                                    <p class="text-center dashboard-card-text">{{ App\Models\Dyestuffs::get()->count() }}</p>
+                                    <p class="text-center dashboard-card-text">0</p>
                                 </div>
                             </div>
                         </div>
@@ -98,7 +98,7 @@
             </div>
         </div>
 
-        <div class="col-md-4">
+        {{-- <div class="col-md-4">
             <div class="card rounded">
                 <div class="card-body rounded dashboard-card-body-5">
                     <div class='px-3 py-3 justify-content-between'>
@@ -116,7 +116,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </section>
 

@@ -33,46 +33,46 @@
                 </li> --}}
 
                 <li>
-                    <a href="{{ route('banner') }}">
+                    <a href="#">
                         <i class="fad fa-icons"></i>
                         <span> Banner </span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ route('basicchemicals') }}">
+                    <a href="">
                         <i class="fas fa-chart-network"></i>
-                        <span> Basic Chemicals </span>
+                        <span> Brands </span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ route('auxiliarychemicals') }}">
+                    <a href="">
                         <i class="fas fa-bezier-curve"></i>
-                        <span> Auxiliary Chemicals </span>
+                        <span> Homepage </span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ route('dyestuffs') }}">
+                    <a href="">
                         <i class="fas fa-ball-pile"></i>
-                        <span> Dyestuffs </span>
+                        <span> Our Story </span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ route('jobportal') }}">
+                    <a href="#">
                         <i class="fab fa-artstation"></i>
-                        <span> Job Post </span>
+                        <span> Products </span>
                     </a>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a href="{{ route('messages') }}">
                         <i class="fas fa-mailbox"></i>
                         <span> Messages </span>
                     </a>
-                </li>
+                </li> --}}
 
                 <li>
                     <a href="#">

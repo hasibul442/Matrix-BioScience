@@ -14,15 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
-Auth::routes();
+Route::get('/banners', "App\Http\Controllers\BannersController@index")->name('banners');
+Route::post('/banners/create', "App\Http\Controllers\BannersController@store")->name('banners.create');
+Route::get('/banner/edit/{id}', "App\Http\Controllers\BannersController@edit")->name('banner.edit');
+Route::put('/banner/update/{id}', "App\Http\Controllers\BannersController@update")->name('banner.update');
+Route::get('/banner/status/{id}/{status}', "App\Http\Controllers\BannersController@statuschange")->name('banner.status.change');
+Route::delete('/banner/{id}', "App\Http\Controllers\BannersController@destroy");
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
