@@ -39,18 +39,18 @@ class BannersController extends Controller
         $request->validate([
             'image' => 'required',
         ]);
-        $banner = new Banners();
+        $banner = new Banners;
         $banner->title = $request->title;
         $banner->status = "Active";
 
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $image_name=time().'.'.$image->getClientOriginalExtension();
-            $image->move(public_path().'/assets/image/banner/',$image_name);
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path() . '/assets/image/banner/', $image_name);
             $banner->image = $image_name;
         }
         $banner->save();
-        return response()->json(['success'=>'Data Add successfully.']);
+        return response()->json(['success' => 'Data Add successfully.']);
     }
 
     /**
@@ -70,10 +70,36 @@ class BannersController extends Controller
      * @param  \App\Models\Banners  $banners
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        $banner = Banners::find($id);
-        return response()->json($banner);
+        if ($request->isMethod('post')) {
+            $banner = Banners::findOrFail($id);
+            $this->validate(
+                $request, [
+                    'title' => 'required',
+                ],
+                [
+                    'title.required' => 'Please enter banner title',
+                ]
+            );
+
+            $banner->title = $request->title;
+            if ($request->hasFile('image')) {
+                $destination = public_path(). '/assets/image/banner/' . $banner->image;
+                if (File::exists($destination)) {
+                    File::delete($destination);
+                }
+                $image = $request->file('image');
+                $image_name = time() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path() . '/assets/image/banner/', $image_name);
+                $banner->image = $image_name;
+            }
+            $banner->update();
+            return redirect()->route('banners');
+        } else {
+            $banner = Banners::find($id);
+            return view('Banner.edit', compact('banner'));
+        }
     }
 
     /**
@@ -87,25 +113,26 @@ class BannersController extends Controller
     {
         $banner = Banners::find($request->id);
         $banner->title = $request->title1;
-        if($request->hasFile('imagee')){
-            $destination = public_path().'/assets/image/banner/'.$banner->image;
-            if(File::exists($destination)){
+        if ($request->hasFile('imagee')) {
+            $destination = public_path() . '/assets/image/banner/' . $banner->image;
+            if (File::exists($destination)) {
                 File::delete($destination);
             }
             $image = $request->file('imagee');
-            $image_name = time().'.'.$image->getClientOriginalExtension();
-            $image->move(public_path().'/assets/image/banner/',$image_name);
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path() . '/assets/image/banner/', $image_name);
             $banner->image = $image_name;
         }
         $banner->save();
         // return response()->json($banner);
-        return response()->json(['status'=>200,'message' => 'Banner Information Updated Successfully']);
+        return response()->json(['status' => 200, 'message' => 'Banner Information Updated Successfully']);
     }
-    public function statuschange($id,$status){
+    public function statuschange($id, $status)
+    {
         $banner = Banners::find($id);
         $banner->status = $status;
         $banner->update();
-        return response()->json(['success'=>'Status changed successfully.']);
+        return response()->json(['success' => 'Status changed successfully.']);
     }
     /**
      * Remove the specified resource from storage.
@@ -113,19 +140,18 @@ class BannersController extends Controller
      * @param  \App\Models\Banners  $banners
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id)
+    public function destroy($id)
     {
         $banner = Banners::find($id);
         if (!is_null($banner)) {
-            if(!is_null($banner->image)){
-                $image_path = public_path().'/assets/image/banner/'.$banner->image;
+            if (!is_null($banner->image)) {
+                $image_path = public_path() . '/assets/image/banner/' . $banner->image;
                 unlink($image_path);
                 $banner->delete();
-                return response()->json(['success'=>'Data Delete successfully.']);
-            }
-            else{
+                return response()->json(['success' => 'Data Delete successfully.']);
+            } else {
                 $banner->delete();
-                return response()->json(['success'=>'Data Delete successfully.']);
+                return response()->json(['success' => 'Data Delete successfully.']);
             }
         }
     }

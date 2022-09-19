@@ -33,14 +33,14 @@
                 </li> --}}
 
                 <li>
-                    <a href="#">
+                    <a href="{{ route('banners') }}">
                         <i class="fad fa-icons"></i>
                         <span> Banner </span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="">
+                    <a href="{{ route('brands') }}">
                         <i class="fas fa-chart-network"></i>
                         <span> Brands </span>
                     </a>

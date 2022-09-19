@@ -5,7 +5,7 @@
         <script src="{{ asset('assets/libs/jquery-knob/jquery.knob.min.js') }}"></script>
         <!-- Chart JS -->
         <script src="{{ asset('assets/libs/chart-js/Chart.bundle.min.js') }}"></script>
-
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <!-- Jvector map -->
         {{-- <script src="{{ asset('assets/libs/jqvmap/jquery.vmap.min.js') }}"></script>
         <script src="{{ asset('assets/libs/jqvmap/jquery.vmap.usa.js') }}"></script> --}}

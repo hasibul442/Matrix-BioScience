@@ -55,8 +55,7 @@
                                             data-offstyle="danger" data-id="{{ $item->id }}"
                                             {{ $item->status == 'Active' ? 'checked' : '' }}></td>
                                     <td>
-                                        <a href="javascript:void(0);" class="btn btn-warning btn-sm editbtn"
-                                            data-id={{ $item->id }}><i class="fas fa-edit"></i></a>
+                                        <a href="{{ route('banner.edit', $item->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
                                         {{-- <button class="btn btn-outline-warning btn-sm edit-btn" value="{{ $item->id }}"><i class="fas fa-pencil-alt"></i></button> --}}
                                         <a href="javascript:void(0);" data-id="{{ $item->id }}" role="button"
                                             class="btn btn-sm btn-outline-danger deletebtn"><i
@@ -106,47 +105,6 @@
             </div>
         </div>
     </div>
-
-
-    <div class="modal fade" id="BannerEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="text-center">
-                        <h3 class="modal-title" id="exampleModalLabel">Insert Position & Salary</h3>
-                    </div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <ul id="BannerForm_errorlist"></ul>
-                    <form class="forms-sample" id="bannereditform" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <input type="hidden" name="id" id="id">
-
-                        <div class="form-group">
-                            <label>Title<small class="text-danger">*</small></label>
-                            <input type="text" id="title1" name="title1" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label>Banner Image<small class="text-danger">*</small></label>
-                            <input type="file" id="image1" name="imagee" class="form-control" required />
-                        </div>
-
-
-                        <div class="text-center pb-2">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <input type="submit" class="btn btn-success submit" name="submit" id="submit"
-                                value="Update" />
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <script>
         $(document).ready(function() {
@@ -210,49 +168,49 @@
         });
 
 
-        $('body').on('click', '.editbtn', function() {
-            var id = $(this).data('id');
-            $.ajax({
-                dataType: "json",
-                url: '/banner/edit/' + id,
-                method: 'get',
-                success: function(banners) {
-                    $('#id').val(banners.id);
-                    $('#title1').val(banners.title);
-                    $('#BannerEditModal').modal('show');
-                },
-                error: function(error) {
-                    alert(error);
-                }
-            });
-        });
+        // $('body').on('click', '.editbtn', function() {
+        //     var id = $(this).data('id');
+        //     $.ajax({
+        //         dataType: "json",
+        //         url: '/banner/edit/' + id,
+        //         method: 'get',
+        //         success: function(banners) {
+        //             $('#id').val(banners.id);
+        //             $('#title1').val(banners.title);
+        //             $('#BannerEditModal').modal('show');
+        //         },
+        //         error: function(error) {
+        //             alert(error);
+        //         }
+        //     });
+        // });
 
-        $('#bannereditform').submit(function(e) {
-            e.preventDefault();
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            let id = $('#id').val();
-            let title1 = $('#title1').val();
-            let image = $('#title1').val();
-            // let formData = new FormData($('#bannereditform')[0]);
+        // $('#bannereditform').submit(function(e) {
+        //     e.preventDefault();
+        //     $.ajaxSetup({
+        //         headers: {
+        //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //         }
+        //     });
+        //     let id = $('#id').val();
+        //     let title1 = $('#title1').val();
+        //     let image = $('#title1').val();
+        //     // let formData = new FormData($('#bannereditform')[0]);
 
-            $.ajax({
-                type: "POST",
-                url: "/banner/update/" + id,
-                data: formData,
-                dataType: "json" ,
-                success: function(response) {
+        //     $.ajax({
+        //         type: "POST",
+        //         url: "/banner/update/" + id,
+        //         data: formData,
+        //         dataType: "json" ,
+        //         success: function(response) {
 
-                    $('#BannerEditModal').modal("toggle");
-                    location.reload();
+        //             $('#BannerEditModal').modal("toggle");
+        //             location.reload();
 
-                }
-            });
+        //         }
+        //     });
 
-        });
+        // });
     </script>
     <script>
         $(document).on('change', '#status', function() {

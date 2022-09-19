@@ -22,9 +22,13 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])-
 
 Route::get('/banners', "App\Http\Controllers\BannersController@index")->name('banners');
 Route::post('/banners/create', "App\Http\Controllers\BannersController@store")->name('banners.create');
-Route::get('/banner/edit/{id}', "App\Http\Controllers\BannersController@edit")->name('banner.edit');
-Route::put('/banner/update/{id}', "App\Http\Controllers\BannersController@update")->name('banner.update');
+Route::match(['get', 'post'],'/banner/edit/{id}', "App\Http\Controllers\BannersController@edit")->name('banner.edit');
 Route::get('/banner/status/{id}/{status}', "App\Http\Controllers\BannersController@statuschange")->name('banner.status.change');
 Route::delete('/banner/{id}', "App\Http\Controllers\BannersController@destroy");
+
+Route::get('/brands', "App\Http\Controllers\BrandController@index")->name('brands');
+Route::post('/brands/create', "App\Http\Controllers\BrandController@store")->name('brand.create');
+Route::get('/brands/status/{id}', "App\Http\Controllers\BrandController@statuschange")->name('brand.status.change');
+Route::delete('/brands/{id}', "App\Http\Controllers\BrandController@destroy")->name('brand.delete');
 
 
