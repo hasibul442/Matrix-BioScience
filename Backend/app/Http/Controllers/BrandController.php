@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brands;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class BrandController extends Controller
 {
@@ -14,7 +15,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $brands = Brands::where('status',"Active")->get();
+        $brands = Brands::get();
         return view('Brands.index', compact('brands'));
     }
 
@@ -70,9 +71,37 @@ class BrandController extends Controller
      * @param  \App\Models\Brands  $brands
      * @return \Illuminate\Http\Response
      */
-    public function edit(Brands $brands)
+    public function edit(Request $request, $id)
     {
-        //
+        if ($request->isMethod('post')) {
+            $brand = Brands::findOrFail($id);
+            $this->validate(
+                $request,
+                [
+                    'name' => 'required',
+                ],
+                [
+                    'name.required' => 'Please enter Brand Name',
+                ]
+            );
+
+            $brand->name = $request->name;
+            if ($request->hasFile('image')) {
+                $destination = public_path() . '/assets/image/brand/' . $brand->image;
+                if (File::exists($destination)) {
+                    File::delete($destination);
+                }
+                $image = $request->file('image');
+                $image_name = time() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path() . '/assets/image/brand/', $image_name);
+                $brand->image = $image_name;
+            }
+            $brand->update();
+            return redirect()->route('brands');
+        } else {
+            $brand = Brands::find($id);
+            return view('Brands.edit', compact('brand'));
+        }
     }
 
     /**

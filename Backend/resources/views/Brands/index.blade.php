@@ -57,7 +57,7 @@
                                         {{ $item->status == 'Active' ? 'checked' : '' }}>
                                 </td>
                                 <td>
-                                    {{-- <a href="{{ route('brand.edit', $item->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a> --}}
+                                    <a href="{{ route('brand.edit', $item->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
                                     {{-- <button class="btn btn-outline-warning btn-sm edit-btn" value="{{ $item->id }}"><i class="fas fa-pencil-alt"></i></button> --}}
                                     <a href="javascript:void(0);" data-id="{{ $item->id }}" role="button"
                                         class="btn btn-outline-danger btn-sm deletebtn"><i class="fas fa-trash"></i></a>

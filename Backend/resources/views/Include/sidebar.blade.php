@@ -42,26 +42,33 @@
                 <li>
                     <a href="{{ route('brands') }}">
                         <i class="fas fa-chart-network"></i>
-                        <span> Brands </span>
+                        <span> Brands Information</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="">
+                    <a href="{{ route('contact') }}">
+                        <i class="fas fa-chart-network"></i>
+                        <span> Contact Information </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
                         <i class="fas fa-bezier-curve"></i>
                         <span> Homepage </span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="">
+                    <a href="#">
                         <i class="fas fa-ball-pile"></i>
                         <span> Our Story </span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="{{ route('products') }}">
                         <i class="fab fa-artstation"></i>
                         <span> Products </span>
                     </a>
