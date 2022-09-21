@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -85,9 +86,33 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(Request $request, $id)
     {
-        //
+        if($request->isMethod('post')){
+            $product = Product::findOrFail($id);
+            $product->title = $request->title;
+            $product->description = $request->description;
+            $product->height = $request->height;
+            $product->width = $request->width;
+            $product->image_side = $request->image_side;
+            if ($request->hasFile('image')) {
+                $destination = public_path() . '/assets/image/product/' . $product->image;
+                if (File::exists($destination)) {
+                    File::delete($destination);
+                }
+                $image = $request->file('image');
+                $image_name = time() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path() . '/assets/image/product/', $image_name);
+                $product->image = $image_name;
+            }
+            $product->save();
+            return redirect()->route('products')->with('success', 'Product Updated Successfully');
+
+        }
+        else{
+            $product = Product::findOrFail($id);
+            return view('Product.edit', compact('product'));
+        }
     }
 
     /**
