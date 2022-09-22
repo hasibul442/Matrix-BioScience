@@ -61,7 +61,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="{{ route('ourstories') }}">
                         <i class="fas fa-ball-pile"></i>
                         <span> Our Story </span>
                     </a>

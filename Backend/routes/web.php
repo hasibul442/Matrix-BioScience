@@ -47,5 +47,7 @@ Route::middleware(['auth:sanctum', 'verified'])
             Route::match(['get', 'post'], '/products/edit/{id}', "App\Http\Controllers\ProductController@edit")->name('product.edit');
             Route::get('/products/status/{id}/{status}', "App\Http\Controllers\ProductController@statuschange")->name('product.status.change');
             Route::delete('/products/{id}', "App\Http\Controllers\ProductController@destroy")->name('product.delete');
+
+            Route::get('/ourstories', "App\Http\Controllers\OurStoriesController@index")->name('ourstories');
         }
     );
