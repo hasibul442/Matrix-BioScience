@@ -15,7 +15,7 @@ class CreateOurstoriesTable extends Migration
     {
         Schema::create('ourstories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->string('image')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();

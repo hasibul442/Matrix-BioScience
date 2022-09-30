@@ -54,9 +54,9 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="{{ route('bannertext') }}">
                         <i class="fas fa-bezier-curve"></i>
-                        <span> Homepage </span>
+                        <span> Banner Text </span>
                     </a>
                 </li>
 

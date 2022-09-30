@@ -54,8 +54,8 @@
                                     <td>{{ ++$i }}</td>
                                     <td>{{ $item->email ?? '-'}}</td>
                                     <td>{{ $item->phone_number ?? '-'}}</td>
-                                    <td>{{ $item->location ?? '-' }}</td>
                                     <td>{{ $item->whatsapp ?? '-'}}</td>
+                                    <td>{{ $item->location ?? '-' }}</td>
                                     <td>{{ $item->facebook ?? '-' }}</td>
                                     <td>{{ $item->youtube ?? '-' }}</td>
                                     <td>{{ $item->linkedin ?? '-' }}</td>
@@ -80,7 +80,82 @@
         </div>
     </section>
 
+    <div class="modal fade" id="ContactAdd" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form class="forms-sample" id="ContactForm" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    {{-- <ul class="alert alert-warning d-none" id="save_errorList"></ul> --}}
 
+                    <div class="form-group row">
+                        <label for="title" class="col-sm-3 col-form-label">Email</label>
+                        <div class="col-sm-9">
+                            {{-- <input type="hidden" id="id" class="id" name="id"> --}}
+                            <input type="email" class="form-control" placeholder="email"
+                                name="email">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="title" class="col-sm-3 col-form-label">Phone Number</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control"  placeholder="Phone Number"
+                                name="phone_number">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="title" class="col-sm-3 col-form-label">Address</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" placeholder="Address"
+                                name="location">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="title" class="col-sm-3 col-form-label">WhatsApp</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" placeholder="WhatsApp"
+                                name="whatsapp">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="title" class="col-sm-3 col-form-label">Facebook</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control"
+                                placeholder="www.facebook.com/pagename" name="facebook">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="title" class="col-sm-3 col-form-label">Youtube</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control"
+                                placeholder="www.youtube.com/chennel name" name="youtube">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="title" class="col-sm-3 col-form-label">Linkedin</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control"
+                                placeholder="www.linkedin.com/chennel name" name="linkedin">
+                        </div>
+                    </div>
+
+                    <div class="text-center pb-2">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-success" name="submit" id="submit"
+                            value="Submit" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!--Update Modal -->
     <div class="modal fade" id="ContactUpdateModal" tabindex="-1" aria-labelledby="exampleModalLabel"

@@ -167,50 +167,6 @@
             }
         });
 
-
-        // $('body').on('click', '.editbtn', function() {
-        //     var id = $(this).data('id');
-        //     $.ajax({
-        //         dataType: "json",
-        //         url: '/banner/edit/' + id,
-        //         method: 'get',
-        //         success: function(banners) {
-        //             $('#id').val(banners.id);
-        //             $('#title1').val(banners.title);
-        //             $('#BannerEditModal').modal('show');
-        //         },
-        //         error: function(error) {
-        //             alert(error);
-        //         }
-        //     });
-        // });
-
-        // $('#bannereditform').submit(function(e) {
-        //     e.preventDefault();
-        //     $.ajaxSetup({
-        //         headers: {
-        //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //         }
-        //     });
-        //     let id = $('#id').val();
-        //     let title1 = $('#title1').val();
-        //     let image = $('#title1').val();
-        //     // let formData = new FormData($('#bannereditform')[0]);
-
-        //     $.ajax({
-        //         type: "POST",
-        //         url: "/banner/update/" + id,
-        //         data: formData,
-        //         dataType: "json" ,
-        //         success: function(response) {
-
-        //             $('#BannerEditModal').modal("toggle");
-        //             location.reload();
-
-        //         }
-        //     });
-
-        // });
     </script>
     <script>
         $(document).on('change', '#status', function() {

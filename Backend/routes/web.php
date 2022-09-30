@@ -49,5 +49,16 @@ Route::middleware(['auth:sanctum', 'verified'])
             Route::delete('/products/{id}', "App\Http\Controllers\ProductController@destroy")->name('product.delete');
 
             Route::get('/ourstories', "App\Http\Controllers\OurStoriesController@index")->name('ourstories');
+            Route::post('/ourstories/create', "App\Http\Controllers\OurStoriesController@store")->name('ourstories.create');
+            Route::match(['get', 'post'], '/ourstories/edit/{id}', "App\Http\Controllers\OurStoriesController@edit")->name('ourstories.edit');
+            Route::get('/ourstories/status/{id}/{status}', "App\Http\Controllers\OurStoriesController@statuschange")->name('ourstories.status.change');
+            Route::delete('/ourstories/{id}', "App\Http\Controllers\OurStoriesController@destroy")->name('ourstories.delete');
+
+            Route::get('/bannertext', "App\Http\Controllers\BannerTextController@index")->name('bannertext');
+            Route::post('/bannertext/create', "App\Http\Controllers\BannerTextController@store")->name('bannertext.create');
+            Route::get('/bannertext/edit/{id}', "App\Http\Controllers\BannerTextController@edit")->name('bannertext.edit');
+            Route::put('/bannertext/update', "App\Http\Controllers\BannerTextController@update")->name('bannertext.update');
+            Route::get('/bannertext/status/{id}/{status}', "App\Http\Controllers\BannerTextController@statuschange")->name('bannertext.status.change');
+            Route::delete('/bannertext/{id}', "App\Http\Controllers\BannerTextController@destroy")->name('bannertext.delete');
         }
     );
