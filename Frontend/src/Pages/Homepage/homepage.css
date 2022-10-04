@@ -196,11 +196,12 @@
 @media screen and (max-width: 420px) {
   .banner-image{
     height: 350px;
+    /* position: absolute; */
   }
   .main-text{
       margin-right: 20px;
       position: absolute;
-      top: 6.5rem;
+      top: 8.2rem;
       right: 0%;
       width: 18rem;
   }

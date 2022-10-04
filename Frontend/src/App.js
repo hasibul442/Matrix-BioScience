@@ -6,10 +6,10 @@ import NavBar from './Component/NavBar/NavBar';
 import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import Homepage from './Pages/Homepage/Homepage';
-import Api from './Pages/services/Api';
-import Exports from './Pages/services/Exports';
-import Laboratory from './Pages/services/Laboratory';
-import Marketing from './Pages/services/Marketing';
+// import Api from './Pages/services/Api';
+// import Exports from './Pages/services/Exports';
+// import Laboratory from './Pages/services/Laboratory';
+// import Marketing from './Pages/services/Marketing';
 import Products from './Pages/services/Products';
 
 function App() {

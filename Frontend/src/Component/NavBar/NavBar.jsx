@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./navbar.css";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import axios from "axios";
 function NavBar() {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -10,6 +11,21 @@ function NavBar() {
   useEffect(() => {
     setUrl(location.pathname);
   }, [location]);
+
+  const [producttitle, setProductTitle] = useState([]);
+  const fetchData = async () => {
+    await axios
+      .get("https://admin.matrixbioscience-bd.com/api/v1/products")
+      .then(({ data }) => {
+        setProductTitle(data.products);
+      });
+  }
+  
+    useEffect(() => {
+    fetchData();
+    // fetchBannerText();
+    }, []);
+  
   return (
     <>
       <section id="nav-bar">
@@ -69,12 +85,6 @@ function NavBar() {
                   </NavLink>
                 </li>
 
-                {/* <li className="nav-item">
-                  <NavLink to="/products" className={"nav-link" + (url === '/products' ? " active_1": "" )}>
-                  Products we offer
-                  </NavLink>
-                </li> */}
-
                 <li className="nav-item dropdown dropdown_auto">
                   <NavLink
                     id="dropdown04"
@@ -88,14 +98,17 @@ function NavBar() {
                   >
                     Products we offer
                   </NavLink>
+                  {producttitle.length > 0 && (
                   <div
                     className="dropdown-menu dropdown_auto_menu"
                     aria-labelledby="dropdown04"
-                  >
-                    <Link className="dropdown-item" to="/products">
-                      APIs, Excipients and Packaging Materials
-                    </Link>
-                    <Link className="dropdown-item" to="/products">
+                    >
+                      {producttitle.map((producttitle) => (
+                    <Link className="dropdown-item" to="/products" key={producttitle.id}>
+                       {producttitle.title}
+                      </Link>
+                    ))}
+                    {/* <Link className="dropdown-item" to="/products">
                       Laboratory Analytics
                     </Link>
                     <Link className="dropdown-item" to="/products">
@@ -103,8 +116,9 @@ function NavBar() {
                     </Link>
                     <Link className="dropdown-item" to="/products">
                       Export and Regulatory Services
-                    </Link>
-                  </div>
+                    </Link> */}
+                    </div>
+                    )}
                 </li>
 
                 {/* <li className="nav-item dropdown dropdown-menu-2" >

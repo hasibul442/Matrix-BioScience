@@ -138,7 +138,7 @@ function Products() {
         <div className="container">
           <div className="card border-0">
             <div className="card-body">
-              <p className="product-title mt-3">Our Overseas Partner</p>
+              <p className="product-title mt-3">Our Principals</p>
               <Brands />
             </div>
           </div>
