@@ -195,31 +195,6 @@ function Contact() {
           </div>
         </div>
       </section>
-
-      {/* <section className="pt-5 pb-5">
-        <div className="container">
-          <div className="card border-0">
-            <div className="card-body shadow">
-              <h1 className="block-title text-center">
-                <i className="fas fa-hand-point-right text-danger"></i>{" "}
-                Deriction
-              </h1>
-              <div className="pt-3">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.0504583926663!2d90.39125691414282!3d23.74557999487917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b94e72b5fc59%3A0xa6b676c9773943a!2sMatrix%20Bioscience!5e0!3m2!1sen!2sbd!4v1661878110348!5m2!1sen!2sbd"
-                  width="100%"
-                  height="250"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  title="Google Map Location"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </>
   );
 }
