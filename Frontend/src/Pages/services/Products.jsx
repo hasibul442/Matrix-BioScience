@@ -1,6 +1,59 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Brands from "../../Component/Brands/Brands";
+import axios from "axios";
 function Products() {
+  const [producttitle, setProductTitle] = useState([]);
+  const fetchData = async () => {
+    await axios
+      .get("https://admin.matrixbioscience-bd.com/api/v1/products")
+      .then(({ data }) => {
+        setProductTitle(data.products);
+      });
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  function productPosition() {
+    producttitle.length > 0 &&
+      producttitle.map((item) => {
+        // console.log(item.image_side);
+        if (item.image_side === "Left") {
+          return (
+            <div className="row pb-5" key={item.id}>
+              <div className="col-md-5 ">
+                <img
+                  src={`https://admin.matrixbioscience-bd.com/assets/image/product/${item.image}`}
+                  alt=""
+                  className="product-image img-fluid"
+                />
+              </div>
+              <div className="col-md-7 product-description my-auto">
+                <p className="service-product-title mt-4">{item.title}</p>
+                <p className="pt-3 service-description">{item.description}</p>
+              </div>
+            </div>
+          );
+        } else {
+          return (
+            <div className="row pb-5" key={item.id}>
+              <div className="col-md-7 product-description my-auto">
+                <p className="service-product-title mt-4">{item.title}</p>
+                <p className="pt-3 service-description">{item.description}</p>
+              </div>
+              <div className="col-md-5 ">
+                <img
+                  src={`https://admin.matrixbioscience-bd.com/assets/image/product/${item.image}`}
+                  alt=""
+                  className="product-image img-fluid"
+                />
+              </div>
+            </div>
+          );
+        }
+      });
+  }
+
   return (
     <>
       <section className="contact-bg">
@@ -18,12 +71,14 @@ function Products() {
         </div>
       </section>
 
-
       <section className="pt-5 pb-5">
         <div className="container">
           <div className="card border-0">
             <div className="">
               <div className="row pt-5">
+                {/* <div className="col-md-12 product-block">
+                  {productPosition()}
+                </div> */}
                 <div className="col-md-12 product-block">
                   <div className="row pb-5">
                     <div className="col-md-5 ">
@@ -52,7 +107,7 @@ function Products() {
 
                 <div className="col-md-12 product-block">
                   <div className="row pb-5 pt-5">
-                  <div className="col-md-7 product-description my-auto">
+                    <div className="col-md-7 product-description my-auto">
                       <p className="service-product-title mt-4">
                         Laboratory Analytics
                       </p>
@@ -89,13 +144,13 @@ function Products() {
                         Marketing and Distribution
                       </p>
                       <p className="pt-3 service-description">
-                      Matrix Bioscience offers marketing and distribution
-                      supports for multinational pharmaceutical and
-                      biopharmaceutical companies who want to explore highly
-                      potential Bangladesh market. Our experienced and dynamic
-                      marketing team is ready to promote high-tech and
-                      innovative products of renowned multinational companies to
-                      the medical professionals in Bangladesh.
+                        Matrix Bioscience offers marketing and distribution
+                        supports for multinational pharmaceutical and
+                        biopharmaceutical companies who want to explore highly
+                        potential Bangladesh market. Our experienced and dynamic
+                        marketing team is ready to promote high-tech and
+                        innovative products of renowned multinational companies
+                        to the medical professionals in Bangladesh.
                       </p>
                     </div>
                   </div>
@@ -103,18 +158,18 @@ function Products() {
 
                 <div className="col-md-12 product-block">
                   <div className="row pb-5 pt-5">
-                  <div className="col-md-7 product-description my-auto">
+                    <div className="col-md-7 product-description my-auto">
                       <p className="service-product-title mt-4">
                         Export and Regulatory Services
                       </p>
                       <p className="pt-3 service-description">
-                      We offer services for Bangladeshi pharmaceutical companies
-                      to explore export opportunities of their products. An
-                      expert team with experiences and understanding of
-                      international trading and regulatory requirements of
-                      pharmaceutical products is capable of processing product
-                      development, registration strategies and successful
-                      registration with regulatory authorities.
+                        We offer services for Bangladeshi pharmaceutical
+                        companies to explore export opportunities of their
+                        products. An expert team with experiences and
+                        understanding of international trading and regulatory
+                        requirements of pharmaceutical products is capable of
+                        processing product development, registration strategies
+                        and successful registration with regulatory authorities.
                       </p>
                     </div>
                     <div className="col-md-5 ">
@@ -131,8 +186,6 @@ function Products() {
           </div>
         </div>
       </section>
-
-     
 
       <section className="pt-5 pb-5">
         <div className="container">
