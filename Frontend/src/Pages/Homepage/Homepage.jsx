@@ -9,7 +9,6 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import "./homepage.css";
 import { useEffect } from "react";
 import axios from "axios";
-import parse from 'html-react-parser';
 
 function Homepage() {
   const settings = {

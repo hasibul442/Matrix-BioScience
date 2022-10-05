@@ -46,20 +46,7 @@
 /* .product-block:hover .product-image{
     transform: scale(1.1);
 } */
-.api-bg-image{
-    background-image: url("./../../../public/assets/product/api.jpg");
-}
-.lab-bg-image{
-    background-image: url("./../../../public/assets/product/lab.jpg");
-}
 
-.marketing-bg-image{
-    background-image: url("./../../../public/assets/product/marketing.jpg");
-}
-
-.exports-bg-image{
-    background-image: url("./../../../public/assets/product/export.jpg");
-}
 .service-product-title{
     font-family: "Poppins", serif;
     font-size: 24px;

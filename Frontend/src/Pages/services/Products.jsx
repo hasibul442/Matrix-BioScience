@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Brands from "../../Component/Brands/Brands";
+import "./services.css";
 import axios from "axios";
 function Products() {
   const [producttitle, setProductTitle] = useState([]);
@@ -14,45 +15,44 @@ function Products() {
     fetchData();
   }, []);
 
-  function productPosition() {
-    producttitle.length > 0 &&
-      producttitle.map((item) => {
-        // console.log(item.image_side);
-        if (item.image_side === "Left") {
-          return (
-            <div className="row pb-5" key={item.id}>
-              <div className="col-md-5 ">
-                <img
-                  src={`https://admin.matrixbioscience-bd.com/assets/image/product/${item.image}`}
-                  alt=""
-                  className="product-image img-fluid"
-                />
-              </div>
-              <div className="col-md-7 product-description my-auto">
-                <p className="service-product-title mt-4">{item.title}</p>
-                <p className="pt-3 service-description">{item.description}</p>
-              </div>
-            </div>
-          );
-        } else {
-          return (
-            <div className="row pb-5" key={item.id}>
-              <div className="col-md-7 product-description my-auto">
-                <p className="service-product-title mt-4">{item.title}</p>
-                <p className="pt-3 service-description">{item.description}</p>
-              </div>
-              <div className="col-md-5 ">
-                <img
-                  src={`https://admin.matrixbioscience-bd.com/assets/image/product/${item.image}`}
-                  alt=""
-                  className="product-image img-fluid"
-                />
-              </div>
-            </div>
-          );
-        }
-      });
-  }
+  // function productPosition() {
+  //   producttitle.length > 0 &&
+  //     producttitle.map((item) => {
+  //       if (item.image_side === "Left") {
+  //         return (
+  //           <div className="row pb-5" key={item.id}>
+  //             <div className="col-md-5 ">
+  //               <img
+  //                 src={`https://admin.matrixbioscience-bd.com/assets/image/product/${item.image}`}
+  //                 alt=""
+  //                 className="product-image img-fluid"
+  //               />
+  //             </div>
+  //             <div className="col-md-7 product-description my-auto">
+  //               <p className="service-product-title mt-4">{item.title}</p>
+  //               <p className="pt-3 service-description">{item.description}</p>
+  //             </div>
+  //           </div>
+  //         );
+  //       } else {
+  //         return (
+  //           <div className="row pb-5" key={item.id}>
+  //             <div className="col-md-7 product-description my-auto">
+  //               <p className="service-product-title mt-4">{item.title}</p>
+  //               <p className="pt-3 service-description">{item.description}</p>
+  //             </div>
+  //             <div className="col-md-5 ">
+  //               <img
+  //                 src={`https://admin.matrixbioscience-bd.com/assets/image/product/${item.image}`}
+  //                 alt=""
+  //                 className="product-image img-fluid"
+  //               />
+  //             </div>
+  //           </div>
+  //         );
+  //       }
+  //     });
+  // }
 
   return (
     <>
@@ -75,113 +75,53 @@ function Products() {
         <div className="container">
           <div className="card border-0">
             <div className="">
-              <div className="row pt-5">
-                {/* <div className="col-md-12 product-block">
-                  {productPosition()}
-                </div> */}
-                <div className="col-md-12 product-block">
-                  <div className="row pb-5">
-                    <div className="col-md-5 ">
-                      <img
-                        src="/assets/product/api.jpg"
-                        alt=""
-                        className="product-image img-fluid"
-                      />
+              {producttitle.length > 0 && (
+                <div className="row pt-5">
+                  {producttitle.map((product) => (
+                    <div className="col-md-12 product-block">
+                      {product.image_side === "Left" ? (
+                        <div className="row pb-5">
+                          <div className="col-md-5 ">
+                            <img
+                              src={`https://admin.matrixbioscience-bd.com/assets/image/product/${product.image}`}
+                              alt=""
+                              className="product-image img-fluid"
+                            />
+                          </div>
+                          <div className="col-md-7 product-description my-auto">
+                            <p className="service-product-title mt-4">
+                              {product.title}
+                            </p>
+                            <p className="pt-3 service-description">
+                              {product.description}
+                            </p>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="col-md-12 product-block">
+                          <div className="row pb-5 pt-5">
+                            <div className="col-md-7 product-description my-auto">
+                              <p className="service-product-title mt-4">
+                                {product.title}
+                              </p>
+                              <p className="pt-3 service-description">
+                                {product.description}
+                              </p>
+                            </div>
+                            <div className="col-md-5 ">
+                              <img
+                                src={`https://admin.matrixbioscience-bd.com/assets/image/product/${product.image}`}
+                                alt=""
+                                className="product-image img-fluid"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
-                    <div className="col-md-7 product-description my-auto">
-                      <p className="service-product-title mt-4">
-                        APIs, Excipients and Packaging Materials
-                      </p>
-                      <p className="pt-3 service-description">
-                        We source and supply a wide range of APIs, excipients
-                        and packaging components in pharmaceuticals. Our moto is
-                        to work with quality manufacturer who has penetration in
-                        regulated market and capable to supply CEP/COS, USDMF
-                        grade materials. We are representing International
-                        Pharmaceutical manufacturers of UK, Europe, USA, Japan,
-                        India, & China.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
-
-                <div className="col-md-12 product-block">
-                  <div className="row pb-5 pt-5">
-                    <div className="col-md-7 product-description my-auto">
-                      <p className="service-product-title mt-4">
-                        Laboratory Analytics
-                      </p>
-                      <p className="pt-3 service-description">
-                        A professional and technically skilled team is engaged
-                        to supply all types of laboratory instruments, spares,
-                        consumables and services for QC, QA, Microbiology,
-                        Analytical and R&D labs of Pharmaceuticals. We represent
-                        a number of lab analytic solutions providers who can
-                        deliver a wide range of products.
-                      </p>
-                    </div>
-                    <div className="col-md-5 ">
-                      <img
-                        src="/assets/product/lab.jpg"
-                        alt=""
-                        className="product-image img-fluid"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-md-12 product-block">
-                  <div className="row pb-5 pt-5">
-                    <div className="col-md-5 ">
-                      <img
-                        src="/assets/product/marketing.jpg"
-                        alt=""
-                        className="product-image img-fluid"
-                      />
-                    </div>
-                    <div className="col-md-7 product-description my-auto">
-                      <p className="service-product-title mt-4">
-                        Marketing and Distribution
-                      </p>
-                      <p className="pt-3 service-description">
-                        Matrix Bioscience offers marketing and distribution
-                        supports for multinational pharmaceutical and
-                        biopharmaceutical companies who want to explore highly
-                        potential Bangladesh market. Our experienced and dynamic
-                        marketing team is ready to promote high-tech and
-                        innovative products of renowned multinational companies
-                        to the medical professionals in Bangladesh.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-md-12 product-block">
-                  <div className="row pb-5 pt-5">
-                    <div className="col-md-7 product-description my-auto">
-                      <p className="service-product-title mt-4">
-                        Export and Regulatory Services
-                      </p>
-                      <p className="pt-3 service-description">
-                        We offer services for Bangladeshi pharmaceutical
-                        companies to explore export opportunities of their
-                        products. An expert team with experiences and
-                        understanding of international trading and regulatory
-                        requirements of pharmaceutical products is capable of
-                        processing product development, registration strategies
-                        and successful registration with regulatory authorities.
-                      </p>
-                    </div>
-                    <div className="col-md-5 ">
-                      <img
-                        src="/assets/product/export.jpg"
-                        alt=""
-                        className="product-image img-fluid"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
